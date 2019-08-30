@@ -93,3 +93,6 @@ The calculated metrics was based in *One VS All (OVA)* method for the confusion 
 ## References
 - For Confusion Matrix Metrics (One VS All) [here](https://en.wikipedia.org/wiki/Confusion_matrix)
 - For the Scoring Rules [here](https://www.norsys.com/tutorials/netica/secD/tut_D2.htm) and [here for brier score](https://en.wikipedia.org/wiki/Scoring_rule)
+
+## Acknowledgment
+For the *bnlearn* package creator, **Marco Scutari**, that helped in the creation of the multi-variable prediction algorithm.
