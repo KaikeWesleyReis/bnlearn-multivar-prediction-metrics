@@ -2,7 +2,7 @@
 **Overview**: This set of function was created for Discrete Bayesian Networks using *bnlearn package* to apply multi-variable prediction and Metrics to evaluate your model.
 
 ## How to Use this content
-- Clone this repository to your working directory
+- Clone/download this repository to your working directory
 - In your code, source the file *bnlearn_discrete_multivar_prediction_eval.R* as in the example bellow.
 
 ## Example Code
