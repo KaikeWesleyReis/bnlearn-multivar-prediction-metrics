@@ -1,4 +1,4 @@
-# Support Functions for Multi-Variable Prediction and Evaluation using bnlearn
+# Support Functions for Multi-Variable Prediction and Evaluation using *bnlearn package*
 **Overview**: This set of function was created for Discrete Bayesian Networks using *bnlearn package* to apply multi-variable prediction and Metrics to evaluate your model.
 
 ## How to Use this content
