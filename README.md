@@ -1,5 +1,5 @@
 # Support Functions for Multi-Variable Prediction and Evaluation using *bnlearn package*
-**Overview**: This set of function was created for Discrete Bayesian Networks using *bnlearn package* to apply multi-variable prediction and Metrics to evaluate your model.
+**Overview**: This set of functions was created for Discrete Bayesian Networks using *bnlearn package* to apply multi-variable prediction and Metrics to evaluate your model quality.
 
 ## How to Use this content
 - Clone/download this repository to your working directory
@@ -33,21 +33,17 @@ metrics <- bnMetricsMultiVarPrediction(reference = test[pred],
                                        predProbList = results$probList)
 ```
 
-
-
-
-
 ## Function - bnMultiVarPrediction
 **What it does**: Calculate a multi-variable prediction for discrete bayesian models.
 
 **Parameters**
-- **bnFit**: a object type *bn.fit* (created using bnlearn package)
-- **trainSet**: *dataframe* that you used to train your model
-- **testSet**: *dataframe* that you will use to evaluate your model i.e. prediction
+- **bnFit**: a object type *bn.fit* (created using *bnlearn package*)
+- **trainSet**: *dataframe* used to train your model
+- **testSet**: *dataframe* to evaluate your model i.e. prediction
 - **to_predict**: *vector* with the variables that you want to predict with your model
 - **to_evidence**: *vector* with the variables from your model that you will give as evidence to your model to give the predictions
 - **nSamples**: *integer* related to how many samples that you want to generete in your prediction. Available only if *calcFunction* parameter is set to **cpdist**.
-- **calcFunction**: Define the method that you are going to use to calculate your prediction. The options are *predict* and *cpdist*. For more information about those methods acess [here for predict](http://www.bnlearn.com/documentation/man/impute.html) and [here for cpdist](http://www.bnlearn.com/documentation/man/cpquery.html). The NULL option is *predict*.
+- **calcFunction**: *string* to define the method that will calculate your prediction. The options are *predict* and *cpdist*. For more information about those methods acess [here for predict](http://www.bnlearn.com/documentation/man/impute.html) and [here for cpdist](http://www.bnlearn.com/documentation/man/cpquery.html). The NULL option is *predict*.
 
 **PS**: If you want to predict any root variable in your model, is strictly recommend to use *predict* method. Most because *cpdist* will give the data distribution for that variable.
 
@@ -55,7 +51,7 @@ metrics <- bnMetricsMultiVarPrediction(reference = test[pred],
 
 Return a list of 2 elements:
 - **probList** is a *list* of probabilities given by your model for every sample for every class from that variable.
-- **dominantList** is a *list* of most probable class predicted (higher probability) from your model.
+- **dominantList** is a *list* of most probable class for that variable (higher probability) predict by your your model.
 
 ## Function - bnMetricsMultiVarPrediction
 **What it does**: Calculate a set of metrics based on your predictions
@@ -70,10 +66,10 @@ Return a list of 2 elements:
 Return a list of 3 elements:
 - **cmList** is a *list of tables* for confusion matrix of each predicted variable
 - **ovaList** is a *list of tables* for OVA matrix of each predicted variable
-- **eval** is a *dataframe* where the rows are the predicted variables and the columns are the calculated metrics (about the metrics, more in **Details**)
+- **eval** is a *dataframe* where the rows are the predicted variables and the columns are the calculated metrics.
 
 ## Details
-The calculated metrics was based in *One VS All (OVA)* method for the confusion matrix metrics, *Scoring Rules* the accuracy based on the *multi-level confusion matrix*. The OVA metrics final result for a *j Variable* is the mean of all metrics calculated for each *v level*
+The metrics was based in *One VS All (OVA)* method for the confusion matrix metrics, *Scoring Rules* and the accuracy based on the *multi-level confusion matrix*. The OVA metrics final result for a *j Variable* is the mean of all metrics calculated for each *v level*
 ### One VS All 
 - Accuracy
 - Sensibility
