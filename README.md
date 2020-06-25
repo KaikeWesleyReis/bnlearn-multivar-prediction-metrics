@@ -1,4 +1,6 @@
 # Functions for Multi-Variable Prediction and Evaluation using *bnlearn package*
+![image](https://user-images.githubusercontent.com/32513366/85713471-c9456b00-b6bf-11ea-8252-f3cbefec5db2.png)
+
 **Overview**: This set of functions was created for **Discrete Bayesian Networks** using *bnlearn package* to apply multi-variable prediction and metrics to evaluate your model quality.
 
 ## Functions
